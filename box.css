@@ -1,3 +1,8 @@
+html{
+	scroll-behavior: smooth;
+}
+
+
 .diff-img{
 	
 		width:100%;
@@ -5,6 +10,36 @@
 		margin:20px auto;
 	
 }
-.rita{
-	background-color: aqua;
+.rita::before,
+.rita::after{
+	content: '';
+	position: absolute;
+	top:10%;
+	left: 50%;
+	border: 2px solid black;
+	height: 10px;
+	width: 10px;
+	transform: translate(-50%, -100%) rotate(45deg);
+	border-top: transparent;
+	border-left: transparent;
+	animation: scroll-down 1s ease-in-out infinite;
+}
+.rita::after{
+	top:20%;
+	animation-delay: .3s;
+}
+@keyframes scroll-down{
+	0%{
+		opacity: 0;
+	}
+	30%{
+		opacity: 1;
+	}
+	60%{
+		opacity: 1;
+	}
+	100%{
+		opacity: 0;
+		top: 90%;
+	}
 }
